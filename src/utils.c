@@ -6,9 +6,11 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 21:04:24 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/01 21:28:08 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/01 22:06:38 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 int	ft_strlen(char *str)
 {

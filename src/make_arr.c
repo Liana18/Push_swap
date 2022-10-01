@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   make_arr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 20:40:19 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/01 21:04:08 by lter-zak         ###   ########.fr       */
+/*   Created: 2022/10/01 21:46:58 by lter-zak          #+#    #+#             */
+/*   Updated: 2022/10/01 22:10:52 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	main(int a_nb, char *str[])
+#include "push_swap.h"
+
+char	*fr_join_str(int a_nb, char **str)
 {
-	if (a_nb > 1)
+	int		i;
+	char	*arr;
+
+	i = 0;
+	while (str[i])
 	{
-		ft_join_str(str,);
+		arr = ft_strjoin(arr, str[i]);
 	}
 }
