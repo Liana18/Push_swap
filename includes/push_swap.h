@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 22:00:50 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/01 22:08:17 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/02 22:46:41 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <string.h>
 
 int		ft_strlen(char *str);
-char	*fr_join_str(int a_nb, char **str);
+char	*ft_join_str(int a_nb, char **str);
 char	*ft_strjoin(char *str_main, char *str_copy);
 
 #endif
