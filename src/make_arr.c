@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   make_arr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 21:46:58 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/03 00:11:28 by user             ###   ########.fr       */
+/*   Updated: 2022/10/03 16:39:01 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 char	*ft_firs_join(char *str)
-{	int		len ;
+{	
+	int		len ;
 	char	*arr;
-	int		j; 
-	
+	int		j;
+
 	j = 0;
-	
 	len = ft_strlen(str);
-	arr = malloc(len + 1);
+	arr = malloc(len + 2);
 	while (str[j])
 	{
 		arr[j] = str[j];
@@ -31,22 +31,33 @@ char	*ft_firs_join(char *str)
 	return (arr);
 }
 
-char	*ft_join_str(int a_nb, char **str)
+char	*ft_join_str(char **str)
 {
 	int		i;
 	char	*arr;
-	
+
 	i = 1;
 	arr = ft_firs_join(str[i]);
-	//printf("arr = %s\n\n", arr);
 	i++;
-	(void)a_nb;
-	
 	while (str[i])
 	{
 		arr = ft_strjoin(arr, str[i]);
 		i++;
 	}
-	   printf("arr = %s\n", arr);
+	return (arr);
+}
+
+int	*char_to_int(int len, char **map)
+{
+	int	*arr;
+	int	i;
+
+	i = -1;
+	arr = malloc(sizeof(int) * len + 1);
+	if (!arr)
+		return (0);
+	while (map[++i])
+		arr[i] = ft_atoi(map[i]);
+	arr[i] = '\0';
 	return (arr);
 }
