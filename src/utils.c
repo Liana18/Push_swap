@@ -6,7 +6,7 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 21:04:24 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/03 19:00:14 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/04 18:35:04 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -219,23 +219,4 @@ int		ft_atoi(char *str)
 	if (num * min > INT_MAX || num * min < INT_MIN)
 		print_error();
 	return (num * min);
-}
-
-void checke_dup(int *arr_int)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (arr_int[i])
-	{
-		j = 0;
-		while (arr_int[j])
-		{
-			if (arr_int[i] == arr_int[j] && i != j)
-				print_error();
-			j++;
-		}
-		i++;
-	}
 }

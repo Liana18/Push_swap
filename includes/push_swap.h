@@ -6,7 +6,7 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 22:00:50 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/03 18:38:45 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/04 21:43:37 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	checker(char *str);
 int		*char_to_int(int len, char **map);
 int		matrix_len(char **str);
 int		ft_atoi(char *str);
-void	checke_dup(int *arr_int);
+void	checke_dup(int *arr_int, int arr_len);
 char	*ft_strjoin(char *str_main, char *str_copy);
 char	**ft_split(char const *s, char c);
 

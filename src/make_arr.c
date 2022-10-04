@@ -6,7 +6,7 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 21:46:58 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/03 16:39:01 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/04 21:57:55 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,12 @@ int	*char_to_int(int len, char **map)
 	int	*arr;
 	int	i;
 
+	i = -1;
+	while (map[++i])
+	{
+		if (ft_strlen(map[i]) > 16)
+			print_error();
+	}
 	i = -1;
 	arr = malloc(sizeof(int) * len + 1);
 	if (!arr)

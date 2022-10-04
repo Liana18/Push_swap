@@ -1,5 +1,6 @@
 NAME		= push_swap
-SRC			= $(wildcard src/*.c)
+SRC			= $(wildcard src/*/*.c)
+SRC			+= $(wildcard src/*.c)
 OBJS		= $(SRC:.c =.o)
 INCLUDES	= ./includes 
 CFLAGS		= -Wall -Wextra -Werror
