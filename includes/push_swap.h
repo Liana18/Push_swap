@@ -6,7 +6,7 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 22:00:50 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/04 21:43:37 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/06 21:46:54 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,33 @@
 # include <stdlib.h>
 # include <string.h>
 
+typedef struct s_list	t_list;
+typedef struct s_stack	t_stack;
+typedef struct s_sdata	t_sdata;
+
+struct s_list
+{
+	int		data;
+	//int		index;
+	t_list	*next;
+};
+
+struct s_stack
+{
+	t_list	*head;
+	t_list	*tail;
+	int		count;
+};
+
+struct s_sdata
+{
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+};
+
+void	sa(t_list *list, int i);
+void	sb(t_list *list, int i);
+char	**ft_split(char *s, char c);
 void	print_error(void);
 int		ft_strlen(char *str);
 char	*ft_join_str(char **str);
@@ -30,6 +57,5 @@ int		matrix_len(char **str);
 int		ft_atoi(char *str);
 void	checke_dup(int *arr_int, int arr_len);
 char	*ft_strjoin(char *str_main, char *str_copy);
-char	**ft_split(char const *s, char c);
-
+void	arr_to_list(int *arr, int len);
 #endif

@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   arr_to_list.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 20:40:19 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/06 19:01:34 by lter-zak         ###   ########.fr       */
+/*   Created: 2022/10/06 18:38:42 by lter-zak          #+#    #+#             */
+/*   Updated: 2022/10/06 20:08:14 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int a_nb, char *str[])
+void	arr_to_list(int *arr, int len)
 {
-	char	*arr_char;
-	char	**map;
-	int		*arr_int;
-	int		mtx_len;
+	t_list	*list;
+	t_list	*head;
+	int		i;
 
-	mtx_len = 0;
-	arr_int = NULL;
-	arr_char = NULL;
-	if (a_nb > 2)
+	i = 0;
+	list = malloc(sizeof(t_list));
+	head = list;
+	while (i < len)
 	{
-		arr_char = ft_join_str(str);
-		checker(arr_char);
-		map = ft_split(arr_char, ' ');
-		mtx_len = matrix_len(map);
-		arr_int = char_to_int(mtx_len, map);
-		checke_dup(arr_int, mtx_len);
-		arr_to_list(arr_int, mtx_len);
+		list->data = arr[i];
+		if (i + 1 != len)
+			list->next = malloc(sizeof(t_list));
+		else
+			break ;
+		list = list->next;
+		list->next = 0;
+		i++;
 	}
-	return (0);
+// 	list = head;
+// 	 sa(list);
 }

@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   print_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 20:40:19 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/06 19:01:34 by lter-zak         ###   ########.fr       */
+/*   Created: 2022/10/05 17:11:22 by lter-zak          #+#    #+#             */
+/*   Updated: 2022/10/05 17:11:25 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int a_nb, char *str[])
+void	red(void)
 {
-	char	*arr_char;
-	char	**map;
-	int		*arr_int;
-	int		mtx_len;
+	write(1, "\033[1;92m", 7);
+}
 
-	mtx_len = 0;
-	arr_int = NULL;
-	arr_char = NULL;
-	if (a_nb > 2)
-	{
-		arr_char = ft_join_str(str);
-		checker(arr_char);
-		map = ft_split(arr_char, ' ');
-		mtx_len = matrix_len(map);
-		arr_int = char_to_int(mtx_len, map);
-		checke_dup(arr_int, mtx_len);
-		arr_to_list(arr_int, mtx_len);
-	}
-	return (0);
+void	reset(void)
+{
+	write(1, "\033[0m", 3);
+}
+
+void	print_error(void)
+{
+	char	*str1;
+	char	*str2;
+
+	red();
+	str1 = "\n\n\n\n\n------------------------\n\n\n";
+	str2 = "\n\n\n------------------------\n\n\n\n\n";
+	write(1, str1, ft_strlen(str1));
+	write(1, "         ERROR", 14);
+	write(1, str2, ft_strlen(str2));
+	reset();
+	exit(1);
 }
