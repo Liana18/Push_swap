@@ -6,7 +6,7 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 12:44:01 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/07 15:59:32 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/08 18:29:05 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	cut_list_front(t_list **list)
 {
 	t_list	*push;
-	int 	num;
+	int		num;
 
 	push = *list;
 	num = push->data;

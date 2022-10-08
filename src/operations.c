@@ -6,7 +6,7 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 20:06:21 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/08 12:47:45 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/08 18:55:02 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,49 +47,47 @@ void	ss(t_list *a_list, t_list *b_list)
 	write(1, "ss", 2);
 }
 
-void	pa(t_list **a_list, t_list **b_list, int i)
+void	pa(t_list **a_list, t_list **b_list)
 {
 	t_list	*push;
-	int 	num;
-	
+	int		num;
+
 	if (*b_list)
 	{
 		num = cut_list_front(b_list);
 		push = malloc(sizeof(t_list));
 		push->data = num;
 		push->next = NULL;
-		push->next= *a_list;
+		push->next = *a_list;
 		*a_list = push;
-		if (i == 1)
-			write(1, "pa", 2);
+	//printf("smt = %d\n", push->tail->data);
+		write(1, "pa", 2);
 		free(push);
 	}
-  }
+}
 
- void	pb(t_list **a_list, t_list **b_list, int i)
+void	pb(t_list **a_list, t_list **b_list)
 {
 	t_list	*push;
-	int 	num;
-	
+	int		num;
 	if (*a_list)
 	{
-	     num = cut_list_front(a_list);
+	    num = cut_list_front(a_list);
 		push = malloc(sizeof(t_list));
 		push->data = num;
 		push->next = NULL;
 		push->next= *b_list;
 		*b_list = push;
-		if (i == 1)
-			write(1, "pb", 2);
+		write(1, "pb", 2);
 		free(push);
 	}
-  }
+}
 
-  void	ra(t_list **a_list)
+void	ra(t_list **a_list)
   {
 	t_list	*tmp;
 	int		num;
-	
+
 	num = cut_list_front(a_list);
 	//tmp = malloc(sizeof(t_list));
 	tmp = *a_list;
@@ -101,5 +99,4 @@ void	pa(t_list **a_list, t_list **b_list, int i)
 		//printf(" datat = %d", tmp->data);
 		//tmp->next->data = num;
 		//tmp->next = NULL;
-	
-  }
+}

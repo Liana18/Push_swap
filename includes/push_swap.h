@@ -6,7 +6,7 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 22:00:50 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/07 15:50:55 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/08 18:52:32 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,17 @@ typedef struct s_sdata	t_sdata;
 struct s_list
 {
 	int		data;
+	int		count;
 	//int		index;
 	t_list	*next;
-};
-
-struct s_stack
-{
 	t_list	*head;
-	t_list	*tail;
-	int		count;
+	t_list *tail;
 };
 
 struct s_sdata
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	t_list	*stack_a;
+	t_list	*stack_b;
 };
 
 void	sa(t_list *list, int i);
@@ -62,7 +58,7 @@ void	sa(t_list *list, int i);
 void	sb(t_list *list, int i);
 void	ss(t_list *a_list, t_list *b_list);
 int		cut_list_front(t_list **list);
-void	pa(t_list **a_list,t_list **b_list, int i);
-void	pb(t_list **a_list, t_list **b_list, int i);
+void	pa(t_list **a_list,t_list **b_list);
+void	pb(t_list **a_list, t_list **b_list);
 void	ra(t_list **a_list);
 #endif
