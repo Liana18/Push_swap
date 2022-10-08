@@ -6,7 +6,7 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 22:00:50 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/06 21:46:54 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/07 15:50:55 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,11 @@ int		ft_atoi(char *str);
 void	checke_dup(int *arr_int, int arr_len);
 char	*ft_strjoin(char *str_main, char *str_copy);
 void	arr_to_list(int *arr, int len);
+void	sa(t_list *list, int i);
+void	sb(t_list *list, int i);
+void	ss(t_list *a_list, t_list *b_list);
+int		cut_list_front(t_list **list);
+void	pa(t_list **a_list,t_list **b_list, int i);
+void	pb(t_list **a_list, t_list **b_list, int i);
+void	ra(t_list **a_list);
 #endif

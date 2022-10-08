@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   opdfs.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 20:40:19 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/07 14:18:43 by lter-zak         ###   ########.fr       */
+/*   Created: 2022/10/07 12:44:01 by lter-zak          #+#    #+#             */
+/*   Updated: 2022/10/07 15:59:32 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int a_nb, char *str[])
+int	cut_list_front(t_list **list)
 {
-	char	*arr_char;
-	char	**map;
-	int		*arr_int;
-	int		mtx_len;
+	t_list	*push;
+	int 	num;
 
-	mtx_len = 0;
-	arr_int = NULL;
-	arr_char = NULL;
-	if (a_nb > 2)
-	{
-		arr_char = ft_join_str(str);
-		checker(arr_char);
-		map = ft_split(arr_char, ' ');
-		mtx_len = matrix_len(map);
-		arr_int = char_to_int(mtx_len, map);
-		checke_dup(arr_int, mtx_len);
-		arr_to_list(arr_int, mtx_len);
-	}
-	//sleep(100);
-	return (0);
+	push = *list;
+	num = push->data;
+	// *push = *push->next;    
+	// *list = push;          nuynna
+	*list = push->next;
+	return (num);
 }
