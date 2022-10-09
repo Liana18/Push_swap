@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 20:06:21 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/08 18:55:02 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/09 13:51:48 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ void	pa(t_list **a_list, t_list **b_list)
 		push->next = NULL;
 		push->next = *a_list;
 		*a_list = push;
-	//printf("smt = %d\n", push->tail->data);
 		write(1, "pa", 2);
 		free(push);
 	}
@@ -89,14 +88,11 @@ void	ra(t_list **a_list)
 	int		num;
 
 	num = cut_list_front(a_list);
-	//tmp = malloc(sizeof(t_list));
+	tmp = malloc(sizeof(t_list));
 	tmp = *a_list;
 	while (tmp->next != 0)
 		tmp = tmp->next;
 		tmp ->next= malloc(sizeof(t_list));
 		tmp->next->data = num;
 		tmp->next->next = NULL;
-		//printf(" datat = %d", tmp->data);
-		//tmp->next->data = num;
-		//tmp->next = NULL;
 }

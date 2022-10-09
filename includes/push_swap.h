@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 22:00:50 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/08 18:52:32 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/09 13:23:08 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,23 @@
 typedef struct s_list	t_list;
 typedef struct s_stack	t_stack;
 typedef struct s_sdata	t_sdata;
+typedef	struct s_parts	t_parts;
+
+struct s_parts
+{
+	t_list *head;
+	t_list *tail;
+	int 	count;
+};
 
 struct s_list
 {
 	int		data;
 	int		count;
-	//int		index;
 	t_list	*next;
-	t_list	*head;
-	t_list *tail;
+	t_parts	*node;
 };
+
 
 struct s_sdata
 {
