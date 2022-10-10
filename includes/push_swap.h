@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 22:00:50 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/09 13:23:08 by user             ###   ########.fr       */
+/*   Updated: 2022/10/10 20:20:32 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,17 @@ struct s_parts
 struct s_list
 {
 	int		data;
-	int		count;
+	//int		count;
 	t_list	*next;
-	t_parts	*node;
+	//t_parts	*node;
 };
 
 
-struct s_sdata
-{
-	t_list	*stack_a;
-	t_list	*stack_b;
-};
+// struct s_sdata
+// {
+// 	t_list	*stack_a;
+// 	t_list	*stack_b;
+// };
 
 void	sa(t_list *list, int i);
 void	sb(t_list *list, int i);
@@ -68,4 +68,7 @@ int		cut_list_front(t_list **list);
 void	pa(t_list **a_list,t_list **b_list);
 void	pb(t_list **a_list, t_list **b_list);
 void	ra(t_list **a_list);
+void	ra_rb(t_list **list,int n);
+void	rr(t_list **list_a, t_list **list_b);
+void	rra_rrb(t_list **list, int n);
 #endif
