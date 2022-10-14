@@ -6,7 +6,7 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 20:40:19 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/10 17:37:22 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/12 14:55:36 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ int	main(int a_nb, char *str[])
 		checke_dup(arr_int, mtx_len);
 		arr_to_list(arr_int, mtx_len);
 	}
-	sleep(100);
+	//sleep(100);
 	return (0);
 }

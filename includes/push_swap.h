@@ -6,7 +6,7 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 22:00:50 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/10 20:20:32 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/14 17:45:46 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ struct s_parts
 struct s_list
 {
 	int		data;
-	//int		count;
+	int		index;
 	t_list	*next;
 	//t_parts	*node;
 };
@@ -50,7 +50,8 @@ struct s_list
 
 void	sa(t_list *list, int i);
 void	sb(t_list *list, int i);
-char	**ft_split(char *s, char c);
+//char	**ft_split(char *s, char c);
+char	**ft_split(char const *s, char c);
 void	print_error(void);
 int		ft_strlen(char *str);
 char	*ft_join_str(char **str);
@@ -60,15 +61,15 @@ int		matrix_len(char **str);
 int		ft_atoi(char *str);
 void	checke_dup(int *arr_int, int arr_len);
 char	*ft_strjoin(char *str_main, char *str_copy);
-void	arr_to_list(int *arr, int len);
-void	sa(t_list *list, int i);
-void	sb(t_list *list, int i);
+int 	arr_to_list(int *arr, int len);
 void	ss(t_list *a_list, t_list *b_list);
 int		cut_list_front(t_list **list);
+void	index_list(t_list **list, int len);
+void	sort_list(t_list **stack_a, t_list **stack_b, int len);
 void	pa(t_list **a_list,t_list **b_list);
 void	pb(t_list **a_list, t_list **b_list);
-void	ra(t_list **a_list);
-void	ra_rb(t_list **list,int n);
+void	sa_sb(t_list **list, int i);
+void	ra_rb(t_list **list,int i);
 void	rr(t_list **list_a, t_list **list_b);
 void	rra_rrb(t_list **list, int n);
 #endif

@@ -6,35 +6,62 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:38:42 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/10 20:26:11 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/14 17:34:04 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	arr_to_list(int *arr, int len)
+void	index_list(t_list **list, int len)
+{
+	t_list	*node;
+	t_list	*max;
+	int		i;
+
+	i = 0;
+	node = (*list)->next;
+	max = *list;
+	while (i < len)
+	{
+		while (node != NULL)
+		{
+			if (max->data > node->data && node->index == -1)
+				max = node;
+			node = node->next;
+		}
+		max->index = i;
+		max = *list;
+		node = *list;
+		i++;
+		while (i < len && max->index != -1)
+			max = max->next;
+	}
+}
+
+int	arr_to_list(int *arr, int len)
 {
 	t_parts	*node;
-	t_list *stack_a;
-	t_list *stack_b;
-	//t_list	*head;
+	t_list	*stack_a;
+	t_list	*stack_b;
 	int		i;
-	stack_b = NULL;
+
 	i = 0;
+	stack_b = NULL;
 	node = NULL;
 	node = malloc(sizeof(t_parts));
 	node->head = malloc(sizeof(t_list));
 	node->tail = malloc(sizeof(t_list));
 	stack_a = node->head;
-	node->count = len;
+	//node->count = len;
 	while (i < len)
 	{
 		stack_a->data = arr[i];
+		stack_a->index = -1;
 		if (i + 1 != len)
 			stack_a->next = malloc(sizeof(t_list));
 		else
 		{
-			node->tail = stack_a;   /// avelacrel emmm
+			node->tail = stack_a;
 			break ;
 		}
 		stack_a = stack_a->next;
@@ -42,31 +69,19 @@ void	arr_to_list(int *arr, int len)
 		i++;
 	}
 	stack_a = node->head;
-
+	index_list(&stack_a, len);
+	sort_list(&stack_a, &stack_b, len);
 ////////////////////////////    pa pb ..    ///////////////////////////
 
-//sa(stack_a, 1);              // OK
-//sb(stack_b, 1)			  // OK
-//pb(&stack_a, &stack_b);     // OK
-//pa(&stack_a, &stack_b);      // OK
-//ra_rb(&stack_b, 2);
-rra_rrb(&stack_a, 1);
-
-while (stack_b != NULL) {
-    printf("\nstack_b=>%d\n", stack_b->data);
-    stack_b = stack_b->next;
-  }
-
-  while (stack_a != NULL) {
-    printf("\na_list=>%d\n", stack_a->data);
-       stack_a  = stack_a->next;
-  }
-
-
-// while (node->head != NULL) {
-//    printf("head =>%d\n", node->head->data);
-//     node->head = node->head->next;
-//   }
-  //cut_list_data(t_list lis)
-
+	while (stack_a != NULL)
+	{
+		printf("\nstack_a=>data  = %d\n", stack_a->data);
+		stack_a = stack_a->next;
+	}
+	while (stack_b != NULL)
+	{
+		printf("\nstack_b=>%d\n", stack_b->data);
+		stack_b = stack_b->next;
+	}
+  return (0);
 }
