@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 20:06:21 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/14 20:29:35 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/15 02:20:41 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ void	pa(t_list **a_list, t_list **b_list)
 		push->next = *a_list;
 		*a_list = push;
 		write(1, "pa\n", 3);
-		free(push);
 	}
 }
 
@@ -66,7 +65,7 @@ void	pb(t_list **a_list, t_list **b_list)
 		push->next = *b_list;
 		*b_list = push;
 		write(1, "pb\n", 3);
-		free(push);
+		//free(push);
 	}
 }
 

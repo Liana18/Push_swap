@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 12:53:02 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/14 20:32:43 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/15 02:30:15 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,14 +138,13 @@ void	sort_foure(t_list **stack_a, t_list **stack_b)
 		}
 }
 
-void sort_five(t_list **stack_a, t_list **stack_b, int len)
+void sort_five(t_list **stack_a, t_list **stack_b)
 {
 	int i;
-	(void)len;
 	i = find_max(stack_a);
 	if (i == 0)
 	{
-		pb(stack_a, stack_a);
+		pb(stack_a, stack_b);
 		sort_foure(stack_a, stack_b);
 		pa(stack_a, stack_b);
 		ra_rb(stack_a, 1);
@@ -154,6 +153,7 @@ void sort_five(t_list **stack_a, t_list **stack_b, int len)
 
 void	sort_list(t_list **stack_a, t_list **stack_b, int len)
 {
+	(void)len;
 	if (len == 2)
 		sort_two(stack_a);
 	else if (len == 3)
@@ -161,7 +161,7 @@ void	sort_list(t_list **stack_a, t_list **stack_b, int len)
 	else if (len == 4)
 		sort_foure(stack_a, stack_b);
 	else if (len == 5)
-		sort_five(stack_a, stack_b, len);
+		sort_five(stack_a, stack_b);
 }
 	// while ((*stack_a) != NULL)
 	// {
