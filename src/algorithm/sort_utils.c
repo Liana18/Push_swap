@@ -1,19 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_error.c                                      :+:      :+:    :+:   */
+/*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 17:11:22 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/18 22:47:04 by lter-zak         ###   ########.fr       */
+/*   Created: 2022/10/18 17:25:32 by lter-zak          #+#    #+#             */
+/*   Updated: 2022/10/18 20:52:24 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_error(void)
+int	find_max(t_list **list)
 {
-	write(2, "ERROR\n", 6);
-	exit(1);
+	int		i;
+	int		j;
+	int		max;
+	t_list	*node;
+
+	i = 0;
+	j = 0;
+	node = *list;
+	max = node->index;
+	node = node->next;
+	while (node)
+	{
+		if (max < node->index)
+		{
+			max = node->index;
+			node = node->next;
+			i++;
+			j = i;
+		}
+		else
+		{
+			node = node->next;
+			i++;
+		}
+	}
+	return (j);
 }

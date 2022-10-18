@@ -19,7 +19,8 @@ clean	:
 		$(RM) $(OBJS)
 
 fclean	:
-		$(RM) $(NAME)
+		$(RM) $(NAME)  
+		rm -rf ~/LIbrary/Caches
 
 re		:fclean all
 .PHONY: all clean fclean re

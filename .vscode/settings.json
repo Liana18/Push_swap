@@ -1,6 +1,12 @@
 {
 	"files.associations": {
 		"push_swap.h": "c",
-		"string.h": "c"
+		"string.h": "c",
+		"algorithm": "c",
+		"chrono": "c",
+		"limits": "c",
+		"random": "c",
+		"ratio": "c",
+		"__node_handle": "c"
 	}
 }

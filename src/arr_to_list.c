@@ -6,7 +6,7 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:38:42 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/14 17:34:04 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/18 21:24:43 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	arr_to_list(int *arr, int len)
 	node->head = malloc(sizeof(t_list));
 	node->tail = malloc(sizeof(t_list));
 	stack_a = node->head;
-	//node->count = len;
+	node->count = len;
 	while (i < len)
 	{
 		stack_a->data = arr[i];
@@ -71,17 +71,16 @@ int	arr_to_list(int *arr, int len)
 	stack_a = node->head;
 	index_list(&stack_a, len);
 	sort_list(&stack_a, &stack_b, len);
-////////////////////////////    pa pb ..    ///////////////////////////
 
-	while (stack_a != NULL)
-	{
-		printf("\nstack_a=>data  = %d\n", stack_a->data);
-		stack_a = stack_a->next;
-	}
-	while (stack_b != NULL)
-	{
-		printf("\nstack_b=>%d\n", stack_b->data);
-		stack_b = stack_b->next;
-	}
+	// while (stack_a != NULL)
+	// {
+	// 	printf("\nstack_a=>index  = %d\n", stack_a->index);
+	// 	stack_a = stack_a->next;
+	// }
+	// while (stack_b != NULL)
+	// {
+	// 	printf("\nstack_b=>index == %d\n", stack_b->index);
+	// 	stack_b = stack_b->next;
+	// }
   return (0);
 }

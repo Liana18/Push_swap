@@ -6,7 +6,7 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 20:40:19 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/12 14:55:36 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/18 17:01:55 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,19 @@ int	main(int a_nb, char *str[])
 	mtx_len = 0;
 	arr_int = NULL;
 	arr_char = NULL;
-	if (a_nb > 2)
+	if (a_nb > 1)
 	{
 		arr_char = ft_join_str(str);
+		if (!arr_char)
+			return (0);
 		checker(arr_char);
 		map = ft_split(arr_char, ' ');
 		mtx_len = matrix_len(map);
 		arr_int = char_to_int(mtx_len, map);
+		if (is_sorted(arr_int, mtx_len))
+			return (0);
 		checke_dup(arr_int, mtx_len);
 		arr_to_list(arr_int, mtx_len);
 	}
-	//sleep(100);
-	return (0);
+	exit(0);
 }

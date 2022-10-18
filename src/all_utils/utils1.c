@@ -6,7 +6,7 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 21:04:24 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/14 17:43:05 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/18 22:49:16 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,20 @@ int	ft_atoi(char *str)
 	if (num * min > INT_MAX || num * min < INT_MIN)
 		print_error();
 	return (num * min);
+}
+
+int	is_sorted(int *arr, int len)
+{
+	int	i;
+
+	i = 0;
+	if (len == 1 || len == 0)
+		return (1);
+	while (i < len - 1)
+	{
+		if (arr[i] > arr[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
 }
