@@ -6,7 +6,7 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 22:00:50 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/18 17:27:12 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/21 00:53:21 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,14 @@
 typedef struct s_list	t_list;
 typedef struct s_stack	t_stack;
 typedef struct s_sdata	t_sdata;
-typedef	struct s_parts	t_parts;
-
-struct s_parts
-{
-	t_list *head;
-	t_list *tail;
-	int 	count;
-};
+typedef struct s_parts	t_parts;
 
 struct s_list
 {
 	int		data;
 	int		index;
 	t_list	*next;
-	//t_parts	*node;
 };
-
 
 // struct s_sdata
 // {
@@ -61,7 +52,7 @@ int		matrix_len(char **str);
 int		ft_atoi(char *str);
 void	checke_dup(int *arr_int, int arr_len);
 char	*ft_strjoin(char *str_main, char *str_copy);
-int		arr_to_list(int *arr, int len);
+void	arr_to_list(int *arr, int len);
 void	ss(t_list *a_list, t_list *b_list);
 int		cut_list_front(t_list **list);
 void	index_list(t_list **list, int len);
@@ -70,6 +61,7 @@ void	pa(t_list **a_list, t_list **b_list);
 void	pb(t_list **a_list, t_list **b_list);
 void	sa_sb(t_list **list, int i);
 void	ra_rb(t_list **list, int i);
+void	free_liks(t_list **list);
 void	butterfly_sort(t_list **stack_a, t_list **stack_b, int len);
 void	push_stack_a(t_list **stack_a, t_list **stack_b, int n);
 void	rr(t_list **list_a, t_list **list_b);

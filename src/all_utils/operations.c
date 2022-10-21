@@ -6,7 +6,7 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 20:06:21 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/18 17:22:40 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/20 18:45:24 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 void	sa_sb(t_list **list, int i)
 {
-	int	nb;
+	t_list	*first;
+	t_list	*second;
 
 	if ((*list)->next != NULL)
 	{
-		nb = (*list)->data;
-		(*list)->data = (*list)->next->data;
-		(*list)->next->data = nb;
+		first = *list;
+		second = first->next;
+		first->next = second->next;
+		second->next = first;
+		(*list) = second;
 		if (i == 1)
 			write(1, "sa\n", 3);
 		if (i == 2)

@@ -6,7 +6,7 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 17:25:32 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/18 20:52:24 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/21 00:52:41 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ int	find_max(t_list **list)
 		{
 			max = node->index;
 			node = node->next;
-			i++;
-			j = i;
+			j = ++i;
 		}
 		else
 		{

@@ -6,7 +6,7 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 21:46:58 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/18 16:37:28 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/21 01:29:10 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ char	*ft_join_str(char **str)
 		arr = ft_strjoin(arr, str[i]);
 		i++;
 	}
+	i = 0;
 	return (arr);
 }
 
@@ -66,4 +67,16 @@ int	*char_to_int(int len, char **map)
 		arr[i] = ft_atoi(map[i]);
 	arr[i] = '\0';
 	return (arr);
+}
+
+void	free_liks(t_list **list)
+{
+	t_list	*next;
+
+	while ((*list) != NULL)
+	{
+		next = (*list)->next;
+		free((*list));
+		(*list) = next;
+	}
 }

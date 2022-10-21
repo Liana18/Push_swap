@@ -6,7 +6,7 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:04:44 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/18 23:00:00 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/20 23:57:20 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,18 @@ void	checker(char *str)
 	int	i;
 
 	i = 0;
-
-if ( str[i] == ' ')
-i++;
-	// if ((str[i] >= '0' && str[i] <= '9') || str[i] == ' '
-	// 	|| str[i] == '+' || str[i] == '-')
-	// 	i++;
+	if ((str[i] >= '0' && str[i] <= '9') || str[i] == ' '
+		|| ((str[i] == '+' || str[i] == '-')
+			&& (str[i + 1] >= '0' && str[i + 1] <= '9')))
+			i++;
 	while (str[i])
 	{
-		if ((str[i] >= '0' && str[i] <= '9') || (str[i] == ' '))
-				i++;
-		else if ((str[i] == '+' || str[i] == '-')
-			&& (str[i + 1] >= '0' && str[i + 1] <= '9')
-			&& str[i - 1] != '-' &&  str[i - 1] != '+')
+		if ((str[i] >= '0' && str[i] <= '9') || str[i] == ' ')
+			i++;
+		else
+			if ((str[i] == '+' || str[i] == '-')
+				&& (str[i + 1] >= '0' && str[i + 1] <= '9')
+				&& str[i - 1] == ' ')
 			i++;
 		else
 			print_error();
