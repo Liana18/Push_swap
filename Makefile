@@ -1,7 +1,8 @@
 NAME		= push_swap
 SRC			= $(wildcard src/*/*.c)
 SRC			+= $(wildcard src/*.c)
-OBJS		= $(SRC:.c =.o)
+ #OBJS		= $(SRC:.c =.o)
+OBJS		= $(patsubst %.c, %.o, $(SRC))
 INCLUDES	= ./includes 
 CFLAGS		= -Wall -Wextra -Werror
 RM			= rm -f
@@ -11,7 +12,7 @@ CC			= cc
 	$(CC) $(CFLAGS) -I $(INCLUDES) -c $< -o $@
 
 all: $(NAME)
-
+#$(info $$OBJS is [${OBJS}])
 $(NAME) : $(OBJS)
 		$(CC) $(CFLAGS) -I $(INCLUDES) $(OBJS) -o $(NAME)
 

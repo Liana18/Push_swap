@@ -6,7 +6,7 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 20:06:21 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/20 18:45:24 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/23 17:31:58 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,12 @@ void	ss(t_list *a_list, t_list *b_list)
 void	pa(t_list **a_list, t_list **b_list)
 {
 	t_list	*push;
-	int		num;
 
 	push = NULL;
-	if (*b_list != NULL)
+	if (*b_list)
 	{
-		num = cut_list_front(b_list);
-		push = malloc(sizeof(t_list));
-		push->data = num;
-		push->next = NULL;
+		push = *b_list;
+		(*b_list) = (*b_list)->next;
 		push->next = *a_list;
 		*a_list = push;
 		write(1, "pa\n", 3);
@@ -59,15 +56,12 @@ void	pa(t_list **a_list, t_list **b_list)
 void	pb(t_list **a_list, t_list **b_list)
 {
 	t_list	*push;
-	int		num;
 
 	push = NULL;
 	if (*a_list)
 	{
-		num = cut_list_front(a_list);
-		push = malloc(sizeof(t_list));
-		push->data = num;
-		push->next = NULL;
+		push = *a_list;
+		(*a_list) = (*a_list)->next;
 		push->next = *b_list;
 		*b_list = push;
 		write(1, "pb\n", 3);
@@ -77,22 +71,27 @@ void	pb(t_list **a_list, t_list **b_list)
 void	ra_rb(t_list **list, int i)
 {
 	t_list	*adress;
-	int		num;
+	t_list	*node;
 
-	adress = *list;
-	if (*list != NULL && (*list)->next != NULL)
+	adress = NULL;
+	node = NULL;
+	if ((*list)->next != NULL)
 	{
-		num = cut_list_front(list);
-		while (adress->next != NULL)
+		adress = *list;
+		(*list) = (*list)->next;
+		node = *list;
+		if (adress)
 		{
-		adress = adress->next;
+			while (node->next != NULL)
+			{
+				node = node->next;
+			}
+			node->next = adress;
+			node->next->next = NULL;
 		}
-		adress->next = malloc(sizeof(t_list));
-		adress->next->data = num;
-		adress->next->next = NULL;
+		if (i == 1)
+			write(1, "ra\n", 3);
+		else if (i == 2)
+			write(1, "rb\n", 3);
 	}
-	if (i == 1)
-		write(1, "ra\n", 3);
-	else if (i == 2)
-		write(1, "rb\n", 3);
 }
