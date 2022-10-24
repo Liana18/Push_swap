@@ -6,7 +6,7 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 22:00:50 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/21 00:53:21 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:40:19 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,6 @@ struct s_list
 	t_list	*next;
 };
 
-// struct s_sdata
-// {
-// 	t_list	*stack_a;
-// 	t_list	*stack_b;
-// };
-
-void	sa(t_list *list, int i);
-void	sb(t_list *list, int i);
-//char	**ft_split(char *s, char c);
 char	**ft_split(char const *s, char c);
 void	print_error(void);
 int		ft_strlen(char *str);
@@ -53,19 +44,23 @@ int		ft_atoi(char *str);
 void	checke_dup(int *arr_int, int arr_len);
 char	*ft_strjoin(char *str_main, char *str_copy);
 void	arr_to_list(int *arr, int len);
-void	ss(t_list *a_list, t_list *b_list);
 int		cut_list_front(t_list **list);
 void	index_list(t_list **list, int len);
 void	sort_list(t_list **stack_a, t_list **stack_b, int len);
-void	pa(t_list **a_list, t_list **b_list);
-void	pb(t_list **a_list, t_list **b_list);
-void	sa_sb(t_list **list, int i);
-void	ra_rb(t_list **list, int i);
-void	free_liks(t_list **list);
+void	free_leakc(t_list **list);
 void	butterfly_sort(t_list **stack_a, t_list **stack_b, int len);
 void	push_stack_a(t_list **stack_a, t_list **stack_b, int n);
-void	rr(t_list **list_a, t_list **list_b);
 int		find_max(t_list **list);
 int		is_sorted(int *arr, int len);
+
+void	sa(t_list *list, int i);
+void	sb(t_list *list, int i);
+void	sa_sb(t_list **list, int i);
+void	ra_rb(t_list **list, int i);
 void	rra_rrb(t_list **list, int n);
+void	rra_rrb(t_list **list, int n);
+void	ss(t_list *a_list, t_list *b_list);
+void	pa(t_list **a_list, t_list **b_list);
+void	pb(t_list **a_list, t_list **b_list);
+void	rr(t_list **list_a, t_list **list_b);
 #endif

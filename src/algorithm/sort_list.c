@@ -6,7 +6,7 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 12:53:02 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/21 01:41:18 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:41:07 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ void	sort_list(t_list **stack_a, t_list **stack_b, int len)
 	{
 		butterfly_sort(stack_a, stack_b, 15);
 		push_stack_a(stack_a, stack_b, len);
+		sleep(100);
 	}
 	else if (len > 100 && len < 500)
 	{

@@ -6,7 +6,7 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 21:46:58 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/21 01:29:10 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:34:35 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	*char_to_int(int len, char **map)
 	return (arr);
 }
 
-void	free_liks(t_list **list)
+void	free_leakc(t_list **list)
 {
 	t_list	*next;
 

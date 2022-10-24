@@ -6,7 +6,7 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:38:42 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/23 17:33:24 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:40:41 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	arr_to_list(int *arr, int len)
 
 	i = 0;
 	stack_b = NULL;
-	node = NULL;
 	node = malloc(sizeof(t_list));
 	stack_a = node;
 	while (i < len)
@@ -65,4 +64,5 @@ void	arr_to_list(int *arr, int len)
 	stack_a = node;
 	index_list(&stack_a, len);
 	sort_list(&stack_a, &stack_b, len);
+	free_leakc(&stack_a);
 }

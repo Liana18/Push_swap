@@ -6,10 +6,11 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:04:44 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/20 23:57:20 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:37:33 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include "push_swap.h"
 
 void	checker(char *str)
