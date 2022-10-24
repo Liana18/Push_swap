@@ -6,23 +6,11 @@
 /*   By: lter-zak <lter-zak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 12:44:01 by lter-zak          #+#    #+#             */
-/*   Updated: 2022/10/18 17:23:19 by lter-zak         ###   ########.fr       */
+/*   Updated: 2022/10/23 18:28:51 by lter-zak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	cut_list_front(t_list **list)
-{
-	t_list	*push;
-	int		num;
-
-	push = *list;
-	num = push->data;
-	*list = push->next;
-	free(push);
-	return (num);
-}
 
 void	rr(t_list **list_a, t_list **list_b)
 {
